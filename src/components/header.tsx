@@ -20,7 +20,6 @@ function SignOut() {
 
 const Header = async (props: Props) => {
     const session = await auth();
-    console.log(session);
   return (
     <header className='border bottom-1'>
         <nav className='bg-white border-gray-200 px-4 py-2.5'>
@@ -32,7 +31,9 @@ const Header = async (props: Props) => {
                     {
                         session?.user ? (
                             <div className='flex align-middle items-center gap-4'>
-                                {session.user.name}
+                                {session.user.name && session.user.image &&
+                                    <Image src={session.user.image} alt={session.user.name} width={32} height={32} className='rounded-full'/>
+                                }
                                 <SignOut />
                             </div>
                         ) : (
