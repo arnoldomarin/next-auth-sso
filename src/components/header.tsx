@@ -2,10 +2,7 @@ import React from 'react';
 import { auth, signIn, signOut } from "@/auth";
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
-import Link from 'next/link'
-import { Sign } from 'crypto';
-
-type Props = {}
+import Link from 'next/link';
 
 function SignOut() {
     return (
@@ -18,7 +15,7 @@ function SignOut() {
     )
 }
 
-const Header = async (props: Props) => {
+const Header = async () => {
     const session = await auth();
   return (
     <header className='border bottom-1'>

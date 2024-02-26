@@ -19,4 +19,4 @@ const Recordings = () => {
     )
 }
 
-export default Recordings
+export default Recordings;
